@@ -91,7 +91,7 @@ class ArrayManager:
         if choice == "a":
             self.output_elements_array()
         elif choice == "b":
-            return
+            self.output_elements_ten()
         elif choice == "c":
             return
         elif choice == "d":
@@ -111,3 +111,14 @@ class ArrayManager:
             for j in range(self.cols):
                 if self.array[i][j] % 5 == 0:
                     print(f"Элемент array[{i}][{j}] = {self.array[i][j]}")
+
+    def output_elements_ten(self):
+        if self.array is None:
+            print("Массив еще не создан!\n")
+            return
+
+        print("Элементы, равные 10, и их номер строки:")
+        for i in range(self.rows):
+            for j in range(self.cols):
+                if self.array[i][j] == 10:
+                    print(f"Элемент array[{i}] = {self.array[i][j]}")
