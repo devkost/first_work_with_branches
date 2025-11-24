@@ -81,10 +81,13 @@ class ArrayManager:
         print("\n=== Выполнение функций ===")
 
         print("a. Вывести элементы массива, кратные 5, и их индексы")
-        print("b. Вывести номера тех строк массива, в которых есть хотя бы один элемент, равный 10")
+        print("b. Вывести номера тех строк массива, в "
+              "которых есть хотя бы один элемент, равный 10")
         print("c. Найти столбец с наибольшей суммой элементов")
-        print("d. Найти все неповторяющиеся элементы двумерного массива целых чисел")
-        print("e. Удалить из массива строку и столбец, на пересечении которых расположен минимальный элемент")
+        print("d. Найти все неповторяющиеся элементы "
+              "двумерного массива целых чисел")
+        print("e. Удалить из массива строку и столбец, на пересечении "
+              "которых расположен минимальный элемент")
 
         choice = input("Выберите вариант: ")
 
@@ -93,7 +96,7 @@ class ArrayManager:
         elif choice == "b":
             self.output_elements_ten()
         elif choice == "c":
-            return
+            self.find_column_with_max_sum()
         elif choice == "d":
             return
         elif choice == "e":
@@ -122,3 +125,20 @@ class ArrayManager:
             for j in range(self.cols):
                 if self.array[i][j] == 10:
                     print(f"Элемент array[{i}] = {self.array[i][j]}")
+
+    def find_column_with_max_sum(self):
+        if self.array is None:
+            print("Массив еще не создан!\n")
+            return
+
+        max_sum = sum(self.array[:, 0])
+        result_column = 0
+
+        for j in range(self.cols):
+            current_sum = sum(self.array[:, j])
+            if current_sum > max_sum:
+                max_sum = current_sum
+                result_column = j
+
+        print(f"Столбец {self.array[:, result_column]} с наибольшей "
+              f"суммой {max_sum}")
