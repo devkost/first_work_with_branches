@@ -89,7 +89,7 @@ class ArrayManager:
         choice = input("Выберите вариант: ")
 
         if choice == "a":
-            return
+            self.output_elements_array()
         elif choice == "b":
             return
         elif choice == "c":
@@ -100,3 +100,14 @@ class ArrayManager:
             return
         else:
             print("Неверный выбор!")
+
+    def output_elements_array(self):
+        if self.array is None:
+            print("Массив еще не создан!\n")
+            return
+
+        print("Элементы, кратные 5, и их индексы:")
+        for i in range(self.rows):
+            for j in range(self.cols):
+                if self.array[i][j] % 5 == 0:
+                    print(f"Элемент array[{i}][{j}] = {self.array[i][j]}")
