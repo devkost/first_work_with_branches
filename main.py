@@ -1,0 +1,24 @@
+def main():
+    while True:
+        print("1. Создание массива")
+        print("2. Ввод размера массива")
+        print("3. Просмотр созданного массива")
+        print("4. Выход\n")
+
+        choice = input("Выберите пункт меню (1-4): ")
+
+        if choice == "1":
+            return
+        elif choice == "2":
+            return
+        elif choice == "3":
+            return
+        elif choice == "4":
+            print("Выход из программы...")
+            break
+        else:
+            print("Неверный выбор! Пожалуйста, выберите от 1 до 4.")
+
+
+if __name__ == "__main__":
+    main()
