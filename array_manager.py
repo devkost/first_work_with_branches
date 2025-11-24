@@ -66,3 +66,13 @@ class ArrayManager:
         print("\n--- Автоматический ввод ---")
         self.array = np.random.randint(0, 101, size=(self.rows, self.cols))
         print("Массив успешно заполнен случайными числами 0-100!")
+
+    def view_array(self):
+        print("\n=== Просмотр массива ===")
+
+        if self.array is None:
+            print("Массив еще не создан!\n")
+            return
+
+        print("Содержимое массива:")
+        print(self.array)

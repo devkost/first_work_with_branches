@@ -17,7 +17,7 @@ def main():
         elif choice == "2":
             manager.input_array_size()
         elif choice == "3":
-            return
+            manager.view_array()
         elif choice == "4":
             print("Выход из программы...")
             break
