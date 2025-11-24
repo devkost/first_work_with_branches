@@ -30,17 +30,17 @@ class ArrayManager:
             return
 
         print("\n=== Создание массива ===")
-        print("1. Ручной ввод")
-        print("2. Автоматический ввод (целые числа 0-100)")
-        print("3. Назад")
+        print("a. Ручной ввод")
+        print("b. Автоматический ввод (целые числа 0-100)")
+        print("c. Назад")
 
         choice = input("Выберите вариант: ")
 
-        if choice == "1":
+        if choice == "a":
             self.manual_input()
-        elif choice == "2":
+        elif choice == "b":
             self.automatic_input()
-        elif choice == "3":
+        elif choice == "c":
             return
         else:
             print("Неверный выбор!")
@@ -76,3 +76,27 @@ class ArrayManager:
 
         print("Содержимое массива:")
         print(self.array)
+
+    def performing_functions(self):
+        print("\n=== Выполнение функций ===")
+
+        print("a. Вывести элементы массива, кратные 5, и их индексы")
+        print("b. Вывести номера тех строк массива, в которых есть хотя бы один элемент, равный 10")
+        print("c. Найти столбец с наибольшей суммой элементов")
+        print("d. Найти все неповторяющиеся элементы двумерного массива целых чисел")
+        print("e. Удалить из массива строку и столбец, на пересечении которых расположен минимальный элемент")
+
+        choice = input("Выберите вариант: ")
+
+        if choice == "a":
+            return
+        elif choice == "b":
+            return
+        elif choice == "c":
+            return
+        elif choice == "d":
+            return
+        elif choice == "e":
+            return
+        else:
+            print("Неверный выбор!")
