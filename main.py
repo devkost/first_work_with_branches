@@ -1,4 +1,9 @@
+from array_manager import *
+
+
 def main():
+    manager = ArrayManager()
+
     while True:
         print("1. Создание массива")
         print("2. Ввод размера массива")
@@ -10,7 +15,7 @@ def main():
         if choice == "1":
             return
         elif choice == "2":
-            return
+            manager.input_array_size()
         elif choice == "3":
             return
         elif choice == "4":
