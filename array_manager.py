@@ -23,3 +23,46 @@ class ArrayManager:
         except ValueError:
             print("Ошибка: введите целые числа!")
             return False
+
+    def create_array(self):
+        if self.rows == 0 or self.cols == 0:
+            print("Сначала введите размер массива!\n")
+            return
+
+        print("\n=== Создание массива ===")
+        print("1. Ручной ввод")
+        print("2. Автоматический ввод (целые числа 0-100)")
+        print("3. Назад")
+
+        choice = input("Выберите вариант: ")
+
+        if choice == "1":
+            self.manual_input()
+        elif choice == "2":
+            self.automatic_input()
+        elif choice == "3":
+            return
+        else:
+            print("Неверный выбор!")
+
+    def manual_input(self):
+        print("\n--- Ручной ввод ---")
+        self.array = np.zeros((self.rows, self.cols), dtype=int)
+
+        for i in range(self.rows):
+            for j in range(self.cols):
+                while True:
+                    try:
+                        print(f"Введите элемент [{i}][{j}]: ", end="")
+                        value = int(input())
+                        self.array[i, j] = value
+                        break
+                    except ValueError:
+                        print("Ошибка: введите целое число!")
+
+        print("Массив успешно заполнен!")
+
+    def automatic_input(self):
+        print("\n--- Автоматический ввод ---")
+        self.array = np.random.randint(0, 101, size=(self.rows, self.cols))
+        print("Массив успешно заполнен случайными числами 0-100!")

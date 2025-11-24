@@ -13,7 +13,7 @@ def main():
         choice = input("Выберите пункт меню (1-4): ")
 
         if choice == "1":
-            return
+            manager.create_array()
         elif choice == "2":
             manager.input_array_size()
         elif choice == "3":
