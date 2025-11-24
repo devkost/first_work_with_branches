@@ -1,4 +1,5 @@
 import numpy as np
+from collections import Counter
 
 
 class ArrayManager:
@@ -98,7 +99,7 @@ class ArrayManager:
         elif choice == "c":
             self.find_column_with_max_sum()
         elif choice == "d":
-            return
+            self.find_unique_elements()
         elif choice == "e":
             return
         else:
@@ -142,3 +143,13 @@ class ArrayManager:
 
         print(f"Столбец {self.array[:, result_column]} с наибольшей "
               f"суммой {max_sum}")
+
+    def find_unique_elements(self):
+        if self.array is None:
+            print("Массив еще не создан!\n")
+            return
+
+        unique_elements = [int(x) for x, count in
+                           Counter(self.array.flatten()).items()
+                           if count == 1]
+        print(f"Неповторяющиеся элементы: {unique_elements}")
