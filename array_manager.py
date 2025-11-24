@@ -37,11 +37,11 @@ class ArrayManager:
 
         choice = input("Выберите вариант: ")
 
-        if choice == "a":
+        if choice.lower() == "a":
             self.manual_input()
-        elif choice == "b":
+        elif choice.lower() == "b":
             self.automatic_input()
-        elif choice == "c":
+        elif choice.lower() == "c":
             return
         else:
             print("Неверный выбор!")
@@ -92,16 +92,16 @@ class ArrayManager:
 
         choice = input("Выберите вариант: ")
 
-        if choice == "a":
+        if choice.lower() == "a":
             self.output_elements_array()
-        elif choice == "b":
+        elif choice.lower() == "b":
             self.output_elements_ten()
-        elif choice == "c":
+        elif choice.lower() == "c":
             self.find_column_with_max_sum()
-        elif choice == "d":
+        elif choice.lower() == "d":
             self.find_unique_elements()
-        elif choice == "e":
-            return
+        elif choice.lower() == "e":
+            self.delete_row_col_with_min()
         else:
             print("Неверный выбор!")
 
@@ -153,3 +153,21 @@ class ArrayManager:
                            Counter(self.array.flatten()).items()
                            if count == 1]
         print(f"Неповторяющиеся элементы: {unique_elements}")
+
+    def delete_row_col_with_min(self):
+        if self.array is None:
+            print("Массив еще не создан!\n")
+            return
+
+        min_index = np.unravel_index(np.argmin(self.array), self.array.shape)
+        min_row, min_col = min_index
+
+        print(f"Минимальный элемент {self.array[min_row, min_col]} на "
+              f"позиции ({min_row}, {min_col})")
+
+        new_matrix = np.delete(self.array, min_row, axis=0)
+        new_matrix = np.delete(new_matrix, min_col, axis=1)
+
+        self.array = new_matrix
+
+        print(f"Новый вид массива:\n{self.array}")
