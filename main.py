@@ -5,20 +5,23 @@ def main():
     manager = ArrayManager()
 
     while True:
-        print("1. Создание массива")
-        print("2. Ввод размера массива")
-        print("3. Просмотр созданного массива")
-        print("4. Выход\n")
+        print("a. Создание массива")
+        print("b. Ввод размера массива")
+        print("c. Просмотр созданного массива")
+        print("d. Выполнение функций")
+        print("e. Выход\n")
 
         choice = input("Выберите пункт меню (1-4): ")
 
-        if choice == "1":
+        if choice.lower() == "a":
             manager.create_array()
-        elif choice == "2":
+        elif choice.lower() == "b":
             manager.input_array_size()
-        elif choice == "3":
+        elif choice.lower() == "c":
             manager.view_array()
-        elif choice == "4":
+        elif choice.lower() == "d":
+            manager.performing_functions()
+        elif choice.lower() == "e":
             print("Выход из программы...")
             break
         else:
